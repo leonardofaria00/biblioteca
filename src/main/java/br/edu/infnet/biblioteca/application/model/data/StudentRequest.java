@@ -6,7 +6,6 @@ public class StudentRequest {
 
     private String name;
     private LocalDate age;
-    private String registry;
 
     public String getName() {
         return name;
@@ -24,11 +23,4 @@ public class StudentRequest {
         this.age = age;
     }
 
-    public String getRegistry() {
-        return registry;
-    }
-
-    public void setRegistry(String registry) {
-        this.registry = registry;
-    }
 }

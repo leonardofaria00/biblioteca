@@ -21,4 +21,27 @@ public class StudentDocument {
         this.updateDate = studentBuilder.getUpdateDate();
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public LocalDate getAge() {
+        return age;
+    }
+
+    public String getRegistry() {
+        return registry;
+    }
+
+    public LocalDate getCreateDate() {
+        return createDate;
+    }
+
+    public LocalDate getUpdateDate() {
+        return updateDate;
+    }
 }
