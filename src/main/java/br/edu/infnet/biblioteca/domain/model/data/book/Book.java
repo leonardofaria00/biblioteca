@@ -6,6 +6,8 @@ import java.time.LocalDate;
 
 public class Book {
 
+    private String uuid;
+
     private String author;
     private String bookName;
     private String bookDescription;
@@ -13,6 +15,14 @@ public class Book {
     private BookPublisher bookPublisher;
     private BookCategory bookCategory;
     private BookStatus bookStatus;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public String getAuthor() {
         return author;

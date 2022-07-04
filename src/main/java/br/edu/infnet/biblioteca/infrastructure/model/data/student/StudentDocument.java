@@ -1,4 +1,4 @@
-package br.edu.infnet.biblioteca.infrastructure.model.data;
+package br.edu.infnet.biblioteca.infrastructure.model.data.student;
 
 import br.edu.infnet.biblioteca.domain.model.builder.StudentBuilder;
 

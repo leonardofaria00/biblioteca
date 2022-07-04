@@ -1,6 +1,6 @@
 package br.edu.infnet.biblioteca.domain.model.builder;
 
-import br.edu.infnet.biblioteca.infrastructure.model.data.StudentDocument;
+import br.edu.infnet.biblioteca.infrastructure.model.data.student.StudentDocument;
 
 import java.time.LocalDate;
 import java.util.UUID;

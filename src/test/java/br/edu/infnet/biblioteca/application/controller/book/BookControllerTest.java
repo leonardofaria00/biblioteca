@@ -33,6 +33,7 @@ class BookControllerTest {
 
     @Test
     void findBookByUuidWithSuccess() {
+        createBookWithSuccess();
         final BookResponse book = controller.findBookByUuid("61057b52-7a8c-4657-ab3f-0c9f93a1b09e");
         Assertions.assertEquals("Clean Code", book.getBookName());
     }
