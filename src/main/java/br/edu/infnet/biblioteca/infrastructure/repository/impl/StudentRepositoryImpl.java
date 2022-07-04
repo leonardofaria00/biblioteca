@@ -23,7 +23,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public Student createStudent(final Student student) {
         try {
-            System.out.printf("Try create a Student with name: %s", student.getName());
+            System.out.printf("Try create a Student with name: %s%n", student.getName());
             final StudentDocument studentDocument = new StudentBuilder()
                     .createUuid()
                     .createName(student.getName())

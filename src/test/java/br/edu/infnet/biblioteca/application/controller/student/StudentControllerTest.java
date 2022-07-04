@@ -1,7 +1,7 @@
 package br.edu.infnet.biblioteca.application.controller.student;
 
 import br.edu.infnet.biblioteca.application.model.data.StudentRequest;
-import br.edu.infnet.biblioteca.domain.model.data.StudentResponse;
+import br.edu.infnet.biblioteca.domain.model.data.student.StudentResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

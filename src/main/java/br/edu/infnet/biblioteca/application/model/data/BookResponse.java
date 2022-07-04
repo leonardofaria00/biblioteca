@@ -1,8 +1,8 @@
 package br.edu.infnet.biblioteca.application.model.data;
 
-import br.edu.infnet.biblioteca.domain.model.data.BookStatus;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookCategory;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookPublisher;
+import br.edu.infnet.biblioteca.state.BookState;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ public class BookResponse {
     private LocalDate publicationDate;
     private BookPublisher bookPublisher;
     private BookCategory bookCategory;
-    private BookStatus bookStatus;
+    private BookState bookStatus;
 
     public String getAuthor() {
         return author;
@@ -64,11 +64,11 @@ public class BookResponse {
         this.bookCategory = bookCategory;
     }
 
-    public BookStatus getBookStatus() {
+    public BookState getBookStatus() {
         return bookStatus;
     }
 
-    public void setBookStatus(BookStatus bookStatus) {
+    public void setBookStatus(BookState bookStatus) {
         this.bookStatus = bookStatus;
     }
 }

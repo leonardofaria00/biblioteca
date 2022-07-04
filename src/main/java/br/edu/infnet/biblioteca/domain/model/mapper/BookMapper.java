@@ -1,8 +1,8 @@
 package br.edu.infnet.biblioteca.domain.model.mapper;
 
 import br.edu.infnet.biblioteca.application.model.data.BookResponse;
-import br.edu.infnet.biblioteca.domain.model.data.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.data.book.Book;
+import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import br.edu.infnet.biblioteca.infrastructure.model.data.book.BookDocument;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

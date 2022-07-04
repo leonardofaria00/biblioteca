@@ -1,4 +1,4 @@
-package br.edu.infnet.biblioteca.domain.model.data;
+package br.edu.infnet.biblioteca.domain.model.data.student;
 
 import java.time.LocalDate;
 

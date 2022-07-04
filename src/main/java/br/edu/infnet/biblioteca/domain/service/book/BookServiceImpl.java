@@ -1,7 +1,7 @@
 package br.edu.infnet.biblioteca.domain.service.book;
 
-import br.edu.infnet.biblioteca.domain.model.data.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.data.book.Book;
+import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.mapper.BookMapper;
 import br.edu.infnet.biblioteca.domain.repository.book.BookRepository;
 import org.springframework.stereotype.Service;

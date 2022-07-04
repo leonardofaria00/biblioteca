@@ -1,8 +1,8 @@
 package br.edu.infnet.biblioteca.application.controller.book;
 
 import br.edu.infnet.biblioteca.application.model.data.BookResponse;
-import br.edu.infnet.biblioteca.domain.model.data.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.data.book.Book;
+import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.mapper.BookMapper;
 import br.edu.infnet.biblioteca.domain.service.book.BookService;
 import org.springframework.http.HttpStatus;

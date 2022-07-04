@@ -1,6 +1,6 @@
 package br.edu.infnet.biblioteca.domain.model.data.book;
 
-import br.edu.infnet.biblioteca.domain.model.data.BookStatus;
+import br.edu.infnet.biblioteca.state.BookState;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ public class Book {
     private LocalDate publicationDate;
     private BookPublisher bookPublisher;
     private BookCategory bookCategory;
-    private BookStatus bookStatus;
+    private BookState bookState;
 
     public String getUuid() {
         return uuid;
@@ -72,11 +72,11 @@ public class Book {
         this.bookCategory = bookCategory;
     }
 
-    public BookStatus getBookStatus() {
-        return bookStatus;
+    public BookState getBookState() {
+        return bookState;
     }
 
-    public void setBookStatus(BookStatus bookStatus) {
-        this.bookStatus = bookStatus;
+    public void setBookState(BookState bookState) {
+        this.bookState = bookState;
     }
 }

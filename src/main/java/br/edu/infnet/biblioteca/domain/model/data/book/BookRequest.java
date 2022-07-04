@@ -1,7 +1,4 @@
-package br.edu.infnet.biblioteca.domain.model.data;
-
-import br.edu.infnet.biblioteca.domain.model.data.book.BookCategory;
-import br.edu.infnet.biblioteca.domain.model.data.book.BookPublisher;
+package br.edu.infnet.biblioteca.domain.model.data.book;
 
 import java.time.LocalDate;
 

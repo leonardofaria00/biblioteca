@@ -1,8 +1,8 @@
 package br.edu.infnet.biblioteca.application.controller.student;
 
 import br.edu.infnet.biblioteca.application.model.data.StudentRequest;
-import br.edu.infnet.biblioteca.domain.model.data.StudentResponse;
 import br.edu.infnet.biblioteca.domain.model.data.student.Student;
+import br.edu.infnet.biblioteca.domain.model.data.student.StudentResponse;
 import br.edu.infnet.biblioteca.domain.model.mapper.StudentMapper;
 import br.edu.infnet.biblioteca.domain.service.StudentService;
 import org.springframework.http.MediaType;
