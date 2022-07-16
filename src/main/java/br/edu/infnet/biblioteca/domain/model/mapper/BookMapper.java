@@ -15,10 +15,12 @@ public interface BookMapper {
     @Mapping(target = "uuid", source = "uuid")
     @Mapping(target = "createDate", source = "localDate")
     @Mapping(target = "updateDate", source = "localDate")
+    @Mapping(target = "bookStatus", source = "book.state")
     BookDocument convertBookToBookDocument(Book book, String uuid, LocalDate localDate);
 
     Book convertRequestToBook(BookRequest bookRequest);
 
+    @Mapping(target = "state", source = "document.bookStatus")
     Book convertBookDocumentToBook(BookDocument document);
 
     BookResponse convertBookToBookResponse(Book book);

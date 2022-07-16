@@ -4,6 +4,7 @@ import br.edu.infnet.biblioteca.domain.model.data.book.Book;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.mapper.BookMapper;
 import br.edu.infnet.biblioteca.domain.repository.book.BookRepository;
+import br.edu.infnet.biblioteca.state.AvailableState;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book createBook(final BookRequest bookRequest) {
         final Book book = bookMapper.convertRequestToBook(bookRequest);
+        book.setState(new AvailableState());// poderia ser realizado no mapper, mas para fins didáticos estamos setando o status assim.
         return bookRepository.createBook(book);
     }
 

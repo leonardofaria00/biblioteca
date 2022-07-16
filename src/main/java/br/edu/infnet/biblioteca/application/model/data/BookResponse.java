@@ -14,7 +14,7 @@ public class BookResponse {
     private LocalDate publicationDate;
     private BookPublisher bookPublisher;
     private BookCategory bookCategory;
-    private BookState bookStatus;
+    private BookState state;
 
     public String getAuthor() {
         return author;
@@ -64,11 +64,11 @@ public class BookResponse {
         this.bookCategory = bookCategory;
     }
 
-    public BookState getBookStatus() {
-        return bookStatus;
+    public BookState getState() {
+        return state;
     }
 
-    public void setBookStatus(BookState bookStatus) {
-        this.bookStatus = bookStatus;
+    public void setState(BookState state) {
+        this.state = state;
     }
 }

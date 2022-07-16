@@ -2,20 +2,19 @@ package br.edu.infnet.biblioteca.state;
 
 import br.edu.infnet.biblioteca.domain.model.data.book.Book;
 
-public class AvailableState implements BookState {
+public class DevolveState implements BookState {
     @Override
     public void next(final Book book) {
-        book.setState(new ReservedState());
-        System.out.println("Livro foi reservado!");
+        book.setState(new AvailableState());
     }
 
     @Override
     public void prev(final Book book) {
-        System.out.println("Não existe status anterior a esse.");
+        book.setState(new RentedState());
     }
 
     @Override
     public void printStatus() {
-        System.out.println("Esse é o status de disponível");
+        System.out.println("Esse é o status de devolvido");
     }
 }

@@ -14,7 +14,8 @@ public class Book {
     private LocalDate publicationDate;
     private BookPublisher bookPublisher;
     private BookCategory bookCategory;
-    private BookState bookState;
+    private BookState state;
+
 
     public String getUuid() {
         return uuid;
@@ -72,11 +73,19 @@ public class Book {
         this.bookCategory = bookCategory;
     }
 
-    public BookState getBookState() {
-        return bookState;
+    public BookState getState() {
+        return state;
     }
 
-    public void setBookState(BookState bookState) {
-        this.bookState = bookState;
+    public void setState(final BookState state) {
+        this.state = state;
+    }
+
+    public void nextState() {
+        state.next(this);
+    }
+
+    public void previousState() {
+        state.prev(this);
     }
 }
