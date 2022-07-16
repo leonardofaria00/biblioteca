@@ -38,8 +38,7 @@ public class BookServiceImpl implements BookService {
         final Book book = findBookByUuid(request.getUuid());
 
         reservedBook(book);
-        final Book bookFinaly = rentBookFinaly(book);
-        return bookFinaly;
+        return rentBookFinaly(book);
     }
 
     private void reservedBook(final Book book) {
