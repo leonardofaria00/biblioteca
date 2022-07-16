@@ -7,4 +7,6 @@ public interface BookRepository {
     Book createBook(Book book);
 
     Book findBookByUuid(String bookUuid);
+
+    Book rentBook(Book book);
 }

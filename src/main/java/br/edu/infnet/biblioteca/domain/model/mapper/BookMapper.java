@@ -18,6 +18,9 @@ public interface BookMapper {
     @Mapping(target = "bookStatus", source = "book.state")
     BookDocument convertBookToBookDocument(Book book, String uuid, LocalDate localDate);
 
+    @Mapping(target = "bookStatus", source = "book.state")
+    BookDocument convertBookToBookDocument(Book book);
+
     Book convertRequestToBook(BookRequest bookRequest);
 
     @Mapping(target = "state", source = "document.bookStatus")

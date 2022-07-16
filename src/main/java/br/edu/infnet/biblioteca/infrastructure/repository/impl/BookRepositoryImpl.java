@@ -46,4 +46,14 @@ public class BookRepositoryImpl implements BookRepository {
 
         return bookMapper.convertBookDocumentToBook(document);
     }
+
+    @Override
+    public Book rentBook(final Book book) {
+        BookDocument document = bookMapper.convertBookToBookDocument(book);
+        document.setUpdateDate(LocalDate.now());
+
+        BOOK_DOCUMENT_ARRAY_LIST.set(0, document);
+
+        return bookMapper.convertBookDocumentToBook(document);
+    }
 }

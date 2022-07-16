@@ -3,6 +3,7 @@ package br.edu.infnet.biblioteca.application.controller.book;
 import br.edu.infnet.biblioteca.application.model.data.BookResponse;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookCategory;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookPublisher;
+import br.edu.infnet.biblioteca.domain.model.data.book.BookRentRequest;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,15 @@ class BookControllerTest {
 
         final BookResponse book = controller.createBook(request);
         Assertions.assertEquals("Clean Code", book.getBookName());
+    }
+
+    @Test
+    void rentBookWithSuccess() {
+        createBookWithSuccess();
+        BookRentRequest request = new BookRentRequest();
+        request.setUuid("123");
+        BookResponse book = controller.rentBook(request);
+        book.getState().printStatus();
     }
 
     @Test
