@@ -38,7 +38,7 @@ public class BookServiceImpl implements BookService {
         final Book book = findBookByUuid(request.getUuid());
 
         reservedBook(book);
-        return rentBookFinaly(book);
+        return rentBookFinally(book);
     }
 
     private void reservedBook(final Book book) {
@@ -46,7 +46,7 @@ public class BookServiceImpl implements BookService {
         bookRepository.rentBook(book);
     }
 
-    private Book rentBookFinaly(final Book book) {
+    private Book rentBookFinally(final Book book) {
         book.nextState();
         return bookRepository.rentBook(book);
     }
