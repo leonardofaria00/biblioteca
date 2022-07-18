@@ -12,28 +12,19 @@ import org.springframework.http.ResponseEntity;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static java.util.Objects.requireNonNull;
-
 @SpringBootTest
-class StudentControllerTest {
+class GetStudentControllerTest {
 
     @Autowired
     private StudentController studentController;
 
     @Test
-    void createStudentWithSuccess() {
+    void getStudentByUuidWithSuccess() {
         StudentRequest studentRequest = new StudentRequest();
         studentRequest.setName("Leonardo Gloria");
         studentRequest.setAge(LocalDate.of(1994, 1, 15));
+        studentController.createStudent(studentRequest);
 
-        final ResponseEntity<StudentResponse> studentResponse = studentController.createStudent(studentRequest);
-        Assertions.assertEquals(HttpStatus.OK, studentResponse.getStatusCode());
-        Assertions.assertEquals(studentRequest.getName(), requireNonNull(studentResponse.getBody()).getName());
-    }
-
-    @Test
-    void getStudentByUuidWithSuccess() {
-        createStudentWithSuccess();
         ResponseEntity<StudentResponse> studentResponse = studentController.getStudentByUuid(UUID.randomUUID().toString());
         Assertions.assertEquals(HttpStatus.OK, studentResponse.getStatusCode());
     }
