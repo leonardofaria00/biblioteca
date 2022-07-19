@@ -1,10 +1,12 @@
 package br.edu.infnet.biblioteca.domain.service.book;
 
 import br.edu.infnet.biblioteca.domain.model.data.book.Book;
+import br.edu.infnet.biblioteca.domain.model.data.book.BookAudit;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookRentRequest;
 import br.edu.infnet.biblioteca.domain.model.data.book.BookRequest;
 import br.edu.infnet.biblioteca.domain.model.mapper.BookMapper;
 import br.edu.infnet.biblioteca.domain.repository.book.BookRepository;
+import br.edu.infnet.biblioteca.domain.service.audit.BookAuditService;
 import br.edu.infnet.biblioteca.state.AvailableState;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +17,16 @@ public class BookServiceImpl implements BookService {
 
     private final BookMapper bookMapper;
 
-    public BookServiceImpl(final BookRepository bookRepository, final BookMapper bookMapper) {
+    private final BookAuditService bookAuditService;
+
+
+    public BookServiceImpl(
+            final BookRepository bookRepository,
+            final BookMapper bookMapper,
+            final BookAuditService bookAuditService) {
         this.bookRepository = bookRepository;
         this.bookMapper = bookMapper;
+        this.bookAuditService = bookAuditService;
     }
 
     @Override
@@ -38,7 +47,9 @@ public class BookServiceImpl implements BookService {
         final Book book = findBookByUuid(request.getUuid());
 
         reservedBook(book);
-        return rentBookFinally(book);
+        final Book rentBookFinally = rentBookFinally(book);
+        bookAuditService.createAudit(BookAudit.RENT, rentBookFinally.getUuid());
+        return rentBookFinally;
     }
 
     private void reservedBook(final Book book) {

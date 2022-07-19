@@ -31,6 +31,7 @@ class RentBookControllerTest {
 
         BookRentRequest rentRequest = new BookRentRequest();
         rentRequest.setUuid("123");
+        // TODO: adicionar Matrícula ou id do aluno.
         BookResponse book = controller.rentBook(rentRequest);
         book.getState().printStatus();
     }
